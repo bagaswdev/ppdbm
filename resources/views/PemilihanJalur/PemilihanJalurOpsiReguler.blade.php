@@ -50,6 +50,8 @@
 
                                         @csrf
 
+                                        <p>*Pilih Opsi TIDAK, jika baru pertama kali mendaftar.</p>
+
                                         <div class="mb-3">
                                             <select class="form-select form-select-lg" id="pemilihan_jalur_jawaban"
                                                 name="pemilihan_jalur_jawaban" required>

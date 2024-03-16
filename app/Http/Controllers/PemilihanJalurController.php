@@ -48,14 +48,16 @@ class PemilihanJalurController extends Controller
 
 
         $validasiData = $request->validate([
-            'no_peserta_didik_ex_reguler'                      => ['required', 'numeric', 'max:255'],
+            'no_peserta_didik_ex_reguler'                      => ['required', 'numeric'],
         ], [
             'no_peserta_didik_ex_reguler.required' => 'Kolom pemilihan jalur harus diisi.',
         ]);
 
-        dd($validasiData);
+        if ($validasiData['no_peserta_didik_ex_reguler'] === 100) {
+            return redirect()->route('dashboard');
+        }
 
 
-        // return view('PemilihanJalur.CekPemilihanJalurOpsiRegulerJawaban', compact('validasiData'));
+        return view('PemilihanJalur.HasilPemilihanJalurOpsiRegulerJawaban', compact('validasiData'));
     }
 }

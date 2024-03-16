@@ -55,9 +55,10 @@
                                                 <label for="no_peserta_didik_ex_reguler" class="form-label">Masukkan No
                                                     Peserta
                                                     Saat Tes di Jalur Prestasi:</label>
-                                                <input type="text" class="form-control" id="no_peserta_didik_ex_reguler"
-                                                    name="no_peserta_didik_ex_reguler" autocomplete="NIK Calon Siswa"
-                                                    placeholder="Contoh: 24000111" required>
+                                                <input type="number" class="form-control"
+                                                    id="no_peserta_didik_ex_reguler" name="no_peserta_didik_ex_reguler"
+                                                    autocomplete="NIK Calon Siswa" placeholder="Contoh: 24000111"
+                                                    required>
                                             </div>
 
 
