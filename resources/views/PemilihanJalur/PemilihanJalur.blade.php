@@ -38,8 +38,7 @@
                                     </div>
                                     @endif
 
-                                    <form action="{{ route('PemilihanJalurOpsiReguler') }}" method="POST"
-                                        class="forms-sample">
+                                    <form action="{{ route('OpsiPemilihanJalur') }}" method="POST" class="forms-sample">
                                         @if (session('success'))
                                         <div class="alert alert-success">
                                             {{ session('success') }}
@@ -53,7 +52,7 @@
                                                 name="pemilihan_jalur">
                                                 <option selected="" value="">PILIH JALUR PENDAFTARAN DISINI</option>
                                                 <option value="reguler-pertanyaan">JALUR REGULER</option>
-                                                <option value="afirmasi">JALUR AFRIMASI</option>
+                                                <option value="afirmasi">JALUR AFIRMASI</option>
                                             </select>
                                             @error('pemilihan_jalur')
                                             <div class="alert alert-danger alert-dismissible mt-1" role="alert">
