@@ -32,13 +32,6 @@
                                             Data</span></a>
                                     <span class="badge bg-warning mb-4">Langkah 3</span>
 
-
-                                    @if (session('error'))
-                                    <div class="alert alert-danger">
-                                        <b>Opps!</b> {{ session('error') }}
-                                    </div>
-                                    @endif
-
                                     <form action="{{ route('HasilPemilihanJalurOpsiRegulerJawaban') }}" method="POST"
                                         class="forms-sample">
                                         @if (session('success'))
@@ -55,11 +48,18 @@
                                                 <label for="no_peserta_didik_ex_reguler" class="form-label">Masukkan No
                                                     Peserta
                                                     Saat Tes di Jalur Prestasi:</label>
-                                                <input type="number" class="form-control"
-                                                    id="no_peserta_didik_ex_reguler" name="no_peserta_didik_ex_reguler"
-                                                    autocomplete="NIK Calon Siswa" placeholder="Contoh: 24000111"
-                                                    required>
+                                                <input type="text" class="form-control" id="no_peserta_didik_ex_reguler"
+                                                    name="no_peserta_didik_ex_reguler" autocomplete="NIK Calon Siswa"
+                                                    placeholder="Contoh: 24000111">
                                             </div>
+
+                                            @if (session('error'))
+                                            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                                <b>Opps!</b> {{ session('error') }}
+                                                <button type="button" class="btn-close" data-bs-dismiss="alert"
+                                                    aria-label="Close"></button>
+                                            </div>
+                                            @endif
 
 
 

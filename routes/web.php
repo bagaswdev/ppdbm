@@ -47,8 +47,9 @@ Route::post('/ProsesOtentikasi', [AuthController::class, 'otentikasi'])->name('o
 
 // PROSES PEMILIHAN JALUR
 Route::get('/PemilihanJalur', [PemilihanJalurController::class, 'PemilihanJalur'])->name('PemilihanJalur')->middleware('isGuest');
-Route::post('/PemilihanJalurOpsiReguler', [PemilihanJalurController::class, 'PemilihanJalurOpsiReguler'])->name('PemilihanJalurOpsiReguler')->middleware('isGuest');
+Route::post('/OpsiPemilihanJalur', [PemilihanJalurController::class, 'OpsiPemilihanJalur'])->name('OpsiPemilihanJalur')->middleware('isGuest');
 Route::post('/CekPemilihanJalurOpsiRegulerJawaban', [PemilihanJalurController::class, 'CekPemilihanJalurOpsiRegulerJawaban'])->name('CekPemilihanJalurOpsiRegulerJawaban')->middleware('isGuest');
+Route::post('/CekPemilihanJalurOpsiAfirmasiJawaban', [PemilihanJalurController::class, 'CekPemilihanJalurOpsiAfirmasiJawaban'])->name('CekPemilihanJalurOpsiAfirmasiJawaban')->middleware('isGuest');
 Route::post('/HasilPemilihanJalurOpsiRegulerJawaban', [PemilihanJalurController::class, 'HasilPemilihanJalurOpsiRegulerJawaban'])->name('HasilPemilihanJalurOpsiRegulerJawaban')->middleware('isGuest');
 
 

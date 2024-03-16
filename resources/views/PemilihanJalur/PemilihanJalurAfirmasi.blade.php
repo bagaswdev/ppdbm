@@ -32,7 +32,17 @@
                                             Malang</span></a>
                                     <span class="badge bg-warning mb-4">Langkah 2</span>
 
-                                    <form action="{{ route('CekPemilihanJalurOpsiRegulerJawaban') }}" method="POST"
+                                    {{-- {{ $validasiData['pemilihan_jalur'] }} --}}
+
+                                    @if (session('error'))
+                                    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                        <b>Opps!</b> {{ session('error') }}
+                                        <button type="button" class="btn-close" data-bs-dismiss="alert"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    @endif
+
+                                    <form action="{{ route('CekPemilihanJalurOpsiAfirmasiJawaban') }}" method="POST"
                                         class="forms-sample">
                                         @if (session('success'))
                                         <div class="alert alert-success">
@@ -42,34 +52,24 @@
 
                                         @csrf
 
-                                        <p>*Pilih Opsi TIDAK, jika baru pertama kali mendaftar.</p>
+
+
+                                        <p>*Anda memilih jalur <b>Afirmasi</b>, Silakan upload berkas KIP. (Berformat
+                                            gambar png/jpg)</p>
 
                                         <div class="mb-3">
-                                            <select class="form-select form-select-lg" id="pemilihan_jalur_jawaban"
-                                                name="pemilihan_jalur_jawaban">
-                                                <option selected="" value="">APAKAH PERNAH MENDAFTAR JALUR PRESTASI?
-                                                </option>
-                                                <option value="ex-reguler">IYA PERNAH</option>
-                                                <option value="reguler">TIDAK</option>
-                                            </select>
 
-                                            @if (session('error'))
-                                            <div class="alert alert-danger alert-dismissible fade show mt-2"
-                                                role="alert">
-                                                <b>Opps!</b> {{ session('error') }}
-                                                <button type="button" class="btn-close" data-bs-dismiss="alert"
-                                                    aria-label="Close"></button>
-                                            </div>
-                                            @endif
+
+                                            {{-- <label class="form-label" for="formFile">File upload</label> --}}
+                                            <input class="form-control mt-2" type="file" id="formFile"
+                                                name="berkas_kip">
+
 
                                             <div>
                                                 <button type="submit"
                                                     class="btn btn-primary me-2 mb-2 mb-md-0 mt-5">LANJUT
                                                     LANGKAH SELANJUTNYA</button>
                                             </div>
-                                        </div>
-
-
 
                                     </form>
                                 </div>
