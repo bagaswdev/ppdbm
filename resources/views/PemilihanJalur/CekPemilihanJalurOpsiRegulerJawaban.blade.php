@@ -60,6 +60,10 @@
                                                     </div>
                                                 @endif
                                                 <div>
+                                                    <a href="{{ route('PemilihanJalur') }}"
+                                                        class="btn btn-success me-2 mb-2 mb-md-0 mt-5">
+                                                        KEMBALI</button>
+                                                    </a>
                                                     <button type="submit"
                                                         class="btn btn-primary me-2 mb-2 mb-md-0 mt-5">LANJUT
                                                         LANGKAH SELANJUTNYA</button>
