@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\TabelDataSiswaModel;
 use App\Models\User;
 use App\Models\Verifikasi;
 use Illuminate\Support\Str;
@@ -38,11 +39,20 @@ class RegisterController extends Controller
 
         $validasiData['password'] = Hash::make($validasiData['password']);
 
-        $uuid = Str::uuid()->toString();
+        // id tabel user
+        $tb_data_user_id = Str::uuid()->toString();
+        $validasiData['tb_data_user_id'] = $tb_data_user_id;
 
-    $validasiData['tb_data_user_id'] = $uuid;
-
+        // simpan di tabel user
         TabelDataUserModel::create($validasiData);
+
+        // id tabel siswa
+        $tb_data_siswa_id = Str::uuid()->toString();
+        $TabelDataSiswa['tb_data_siswa_id'] = $tb_data_siswa_id;
+        $TabelDataSiswa['tb_data_user_id'] = $tb_data_user_id;  //fk dari tabel user
+        // simpan di tabel siswa
+        TabelDataSiswaModel::create($TabelDataSiswa);
+
 
         return redirect()->route('login')->with('success', 'Berhasil Daftar Akun, Silakan Login');
     }

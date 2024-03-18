@@ -12,19 +12,19 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('table_data_siswa', function (Blueprint $table) {
-            $table->id('tb_data_siswa_id');
-            $table->bigInteger('tb_data_user_id');
-            $table->string('tb_data_siswa_nik', 20);
-            $table->string('tb_data_siswa_nama');
-            $table->string('tb_data_siswa_nisn', 20);
-            $table->string('tb_data_siswa_no_kk', 20);
-            $table->string('tb_data_siswa_sekolah_asal');
-            $table->string('tb_data_siswa_alamat_sekolah_asal');
-            $table->string('tb_data_siswa_jenis_kelamin');
-            $table->string('tb_data_siswa_tempat_lahir');
-            $table->date('tb_data_siswa_tanggal_lahir');
-            $table->string('tb_data_siswa_alamat');
-            $table->string('tb_data_siswa_wa',15);
+            $table->string('tb_data_siswa_id');
+            $table->string('tb_data_user_id')->nullable()->default(null);
+            $table->string('tb_data_siswa_nik', 20)->nullable()->default(null);
+            $table->string('tb_data_siswa_nama')->nullable()->default(null);
+            $table->string('tb_data_siswa_nisn', 20)->nullable()->default(null);
+            $table->string('tb_data_siswa_no_kk', 20)->nullable()->default(null);
+            $table->string('tb_data_siswa_sekolah_asal')->nullable()->default(null);
+            $table->string('tb_data_siswa_alamat_sekolah_asal')->nullable()->default(null);
+            $table->string('tb_data_siswa_jenis_kelamin')->nullable()->default(null);
+            $table->string('tb_data_siswa_tempat_lahir')->nullable()->default(null);
+            $table->date('tb_data_siswa_tanggal_lahir')->nullable()->default(null);
+            $table->string('tb_data_siswa_alamat')->nullable()->default(null);
+            $table->string('tb_data_siswa_wa', 15)->nullable()->default(null);
             $table->timestamps();
         });
     }
