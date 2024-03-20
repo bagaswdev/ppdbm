@@ -13,9 +13,9 @@ return new class extends Migration
     {
         Schema::create('table_data_grup_wa', function (Blueprint $table) {
             $table->id('tb_data_grup_wa_id');
-            $table->bigInteger('tb_data_siswa_id');
-            $table->string('tb_data_grup_wa_file');
-            $table->string('tb_data_grup_wa_status');
+            $table->bigInteger('tb_data_siswa_id')->nullable()->default(null);
+            $table->string('tb_data_grup_wa_file')->nullable()->default(null);
+            $table->string('tb_data_grup_wa_status')->nullable()->default(null);
             $table->timestamps();
         });
     }

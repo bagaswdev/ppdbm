@@ -13,11 +13,11 @@ return new class extends Migration
     {
         Schema::create('table_data_ibu_kandung', function (Blueprint $table) {
             $table->id('tb_data_ibu_kandung_id');
-            $table->string('tb_data_ibu_kandung_nama');
-            $table->string('tb_data_ibu_kandung_nik', 20);
-            $table->string('tb_data_ibu_kandung_no_kk', 20);
-            $table->string('tb_data_ibu_kandung_status');
-            $table->string('tb_data_ibu_kandung_hubungan');
+            $table->string('tb_data_ibu_kandung_nama')->nullable()->default(null);
+            $table->string('tb_data_ibu_kandung_nik', 20)->nullable()->default(null);
+            $table->string('tb_data_ibu_kandung_no_kk', 20)->nullable()->default(null);
+            $table->string('tb_data_ibu_kandung_status')->nullable()->default(null);
+            $table->string('tb_data_ibu_kandung_hubungan')->nullable()->default(null);
             $table->timestamps();
         });
     }
