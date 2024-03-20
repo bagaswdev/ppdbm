@@ -13,11 +13,11 @@ return new class extends Migration
     {
         Schema::create('table_data_wali', function (Blueprint $table) {
             $table->id('tb_data_wali_id');
-            $table->string('tb_data_wali_nama');
-            $table->string('tb_data_wali_nik', 20);
-            $table->string('tb_data_wali_no_kk', 20);
-            $table->string('tb_data_wali_status');
-            $table->string('tb_data_wali_hubungan');
+            $table->string('tb_data_wali_nama')->nullable()->default(null);
+            $table->string('tb_data_wali_nik', 20)->nullable()->default(null);
+            $table->string('tb_data_wali_no_kk', 20)->nullable()->default(null);
+            $table->string('tb_data_wali_status')->nullable()->default(null);
+            $table->string('tb_data_wali_hubungan')->nullable()->default(null);
             $table->timestamps();
         });
     }

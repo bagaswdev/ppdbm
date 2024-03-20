@@ -13,9 +13,9 @@ return new class extends Migration
     {
         Schema::create('table_data_kip', function (Blueprint $table) {
             $table->id('tb_data_kip_id');
-            $table->bigInteger('tb_data_siswa_id');
-            $table->string('tb_data_kip_file');
-            $table->string('tb_data_kip_status');
+            $table->bigInteger('tb_data_siswa_id')->nullable()->default(null);
+            $table->string('tb_data_kip_file')->nullable()->default(null);
+            $table->string('tb_data_kip_status')->nullable()->default(null);
             $table->timestamps();
         });
     }

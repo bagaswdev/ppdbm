@@ -13,9 +13,9 @@ return new class extends Migration
     {
         Schema::create('table_data_kk_wali', function (Blueprint $table) {
             $table->id('tb_data_kk_wali_id');
-            $table->bigInteger('tb_data_siswa_id');
-            $table->string('tb_data_kk_wali_file');
-            $table->string('tb_data_kk_wali_status');
+            $table->bigInteger('tb_data_siswa_id')->nullable()->default(null);
+            $table->string('tb_data_kk_wali_file')->nullable()->default(null);
+            $table->string('tb_data_kk_wali_status')->nullable()->default(null);
             $table->timestamps();
         });
     }

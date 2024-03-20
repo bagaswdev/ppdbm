@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('table_data_siswa_ayah', function (Blueprint $table) {
             $table->id('tb_data_siswa_ayah_id');
-            $table->bigInteger('tb_data_ayah_kandung_id');
-            $table->bigInteger('tb_data_siswa_id');
+            $table->bigInteger('tb_data_ayah_kandung_id')->nullable()->default(null);
+            $table->bigInteger('tb_data_siswa_id')->nullable()->default(null);
             $table->timestamps();
         });
     }
