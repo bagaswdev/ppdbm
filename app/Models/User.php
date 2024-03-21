@@ -20,7 +20,7 @@ class User extends Authenticatable
      */
 
 
-    protected $table = "users";
+    protected $table = "table_data_user";
 
     protected $fillable = [
         'tb_data_user_nik',

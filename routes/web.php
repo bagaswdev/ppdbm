@@ -27,7 +27,7 @@ Route::get('/DaftarUlang', [AuthController::class, 'DaftarUlang'])->name('Daftar
 Route::get('/tes2024', [AuthController::class, 'tes2024'])->name('tes2024')->middleware('isGuest');
 Route::get('/monitoring', [AuthController::class, 'monitoring'])->name('monitoring')->middleware('isGuest');
 Route::get('/reguler', [AuthController::class, 'reguler'])->name('reguler')->middleware('isGuest');
-// Route::get('/', [AuthController::class, 'login'])->name('login')->middleware('isGuest');
+Route::get('/', [AuthController::class, 'login'])->name('login')->middleware('isGuest');
 // Route::get('/dashboard', [AuthController::class, 'dashboard'])->name('dashboard')->middleware('isLogin');
 
 Route::get('/logout', [AuthController::class, 'logout'])->name('logout')->middleware('isLogin');
@@ -42,6 +42,7 @@ Route::put('/proses_verifikasi', [VerifikasiBerkas::class, 'proses_verifikasi'])
 
 //Proses authentikasi
 Route::get('/', [AuthController::class, 'login'])->name('login')->middleware('isGuest');
+Route::post('/actionLogin', [AuthController::class, 'actionLogin'])->name('actionLogin')->middleware('isGuest');
 Route::get('/register', [RegisterController::class, 'register'])->name('register')->middleware('isGuest');
 Route::post('/ProsesOtentikasi', [AuthController::class, 'otentikasi'])->name('otentikasi')->middleware('isGuest');
 
