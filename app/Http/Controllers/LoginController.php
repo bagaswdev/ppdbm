@@ -20,7 +20,7 @@ class LoginController extends Controller
     public function actionlogin(Request $request)
     {
         $data = [
-            'username' => $request->input('username'),
+            'username' => $request->input('nik_peserta_didik'),
             'password' => $request->input('password'),
         ];
 

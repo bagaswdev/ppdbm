@@ -4,12 +4,32 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
 
 class AuthController extends Controller
 {
     public function login()
     {
-        return view('auth.login');
+        if (Auth::check()){
+            return redirect('PemilihanJalur');
+        }else{
+            return view('auth.login');
+        }
+    }
+
+    public function actionLogin(Request $request)
+    {
+        $data = [
+            'tb_data_user_nik' => $request->input('nik_peserta_didik'),
+            'password' => $request->input('password'),
+        ];
+
+        if(Auth::attempt($data)) {
+            return redirect('PemilihanJalur');
+        }else{
+            Session::flash('error', 'NIK atau Password Salah');
+            return redirect('/');
+        }
     }
 
     public function pengumuman()
