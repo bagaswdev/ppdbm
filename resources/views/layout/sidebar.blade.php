@@ -114,6 +114,17 @@
                     <span class="link-title">Data</span>
                 </a>
             </li> --}}
+
+
+            {{-- HALAMAN VERIFIKASI --}}
+            <li class="nav-item nav-category">Verifikator</li>
+            <li class="nav-item ">
+                <a href="{{ route('VerifikasiDataFoto') }}" class="nav-link">
+                    <i class="link-icon" data-feather="box"></i>
+                    <span class="link-title">Verifikasi Data Foto</span>
+                </a>
+            </li>
+
         </ul>
     </div>
 </nav>
