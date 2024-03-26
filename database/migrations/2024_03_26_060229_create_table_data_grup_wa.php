@@ -11,11 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('table_data_foto', function (Blueprint $table) {
-            $table->id('tb_data_foto_id');
+        Schema::create('table_data_grup_wa', function (Blueprint $table) {
+            $table->id('tb_data_grup_wa_id');
             $table->bigInteger('tb_data_siswa_id')->nullable()->default(null);
-            $table->string('tb_data_foto_file')->nullable()->default(null);
-            $table->string('tb_data_foto_status')->nullable()->default(null);
+            $table->bigInteger('tb_data_user_verifikator_id')->nullable()->default(null);
+            $table->string('tb_data_grup_wa_file')->nullable()->default(null);
+            $table->string('tb_data_grup_wa_status')->nullable()->default(null);
             $table->timestamps();
         });
     }
@@ -25,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('table_data_foto');
+        Schema::dropIfExists('table_data_grup_wa');
     }
 };

@@ -11,11 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('table_data_kelakuan_baik', function (Blueprint $table) {
-            $table->id('tb_data_kelakuan_baik_id');
+        Schema::create('table_data_keabsahan', function (Blueprint $table) {
+            $table->id('tb_data_keabsahan_id');
             $table->bigInteger('tb_data_siswa_id')->nullable()->default(null);
-            $table->string('tb_data_kelakuan_baik_file')->nullable()->default(null);
-            $table->string('tb_data_kelakuan_baik_status')->nullable()->default(null);
+            $table->bigInteger('tb_data_user_verifikator_id')->nullable()->default(null);
+            $table->string('tb_data_keabsahan_file')->nullable()->default(null);
+            $table->string('tb_data_keabsahan_status')->nullable()->default(null);
             $table->timestamps();
         });
     }
@@ -25,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('table_data_kelakuan_baik');
+        Schema::dropIfExists('table_data_keabsahan');
     }
 };
