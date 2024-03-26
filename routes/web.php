@@ -9,6 +9,7 @@ use App\Http\Controllers\PemilihanJalurController;
 use App\Http\Controllers\PendaftaranController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\VerifikasiBerkas;
+use App\Http\Controllers\VerifikasiDataFotoController;
 use Illuminate\Support\Facades\Auth;
 
 /*
@@ -79,3 +80,18 @@ Route::get('/upload_berkas_nisn', [PendaftaranController::class, 'upload_berkas_
 Route::get('/upload_berkas_foto', [PendaftaranController::class, 'upload_berkas_foto'])->name('upload_berkas_foto');
 Route::get('/upload_berkas_kip', [PendaftaranController::class, 'upload_berkas_kip'])->name('upload_berkas_kip');
 Route::get('/upload_berkas', [PendaftaranController::class, 'upload_berkas'])->name('upload_berkas');
+
+
+// HALAMAN VERIFIKATOR
+Route::get('/verifikasi_data_foto', [VerifikasiDataFotoController::class, 'index'])->name('VerifikasiDataFoto');
+Route::get('/verifikasi_data_foto', [VerifikasiDataFotoController::class, 'index'])->name('VerifikasiDataFoto');
+Route::get('/verifikasi_data_foto', [VerifikasiDataFotoController::class, 'index'])->name('VerifikasiDataFoto');
+Route::get('/verifikasi_data_foto', [VerifikasiDataFotoController::class, 'index'])->name('VerifikasiDataFoto');
+Route::get('/verifikasi_data_foto', [VerifikasiDataFotoController::class, 'index'])->name('VerifikasiDataFoto');
+Route::get('/verifikasi_data_foto', [VerifikasiDataFotoController::class, 'index'])->name('VerifikasiDataFoto');
+Route::get('/verifikasi_data_foto', [VerifikasiDataFotoController::class, 'index'])->name('VerifikasiDataFoto');
+Route::get('/verifikasi_data_foto', [VerifikasiDataFotoController::class, 'index'])->name('VerifikasiDataFoto');
+Route::get('/verifikasi_data_foto', [VerifikasiDataFotoController::class, 'index'])->name('VerifikasiDataFoto');
+
+
+// HALAMAN LOGIN VERIFIKATOR
