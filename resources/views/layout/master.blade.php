@@ -64,6 +64,28 @@ License: For each use you must have a valid license purchased only from above li
     <link href="{{ asset('css/app.css') }}" rel="stylesheet" />
     <!-- end common css -->
 
+
+    {{-- sticky --}}
+
+    <style>
+        /* CSS untuk membuat elemen tetap mengambang ketika di-scroll ke bawah */
+        .sticky-label {
+            position: -webkit-sticky;
+            /* Untuk Safari */
+            position: sticky;
+            top: 0;
+            /* Atur posisi elemen di bagian atas */
+            z-index: 1000;
+        }
+
+        .tengah {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+
     @stack('style')
 </head>
 

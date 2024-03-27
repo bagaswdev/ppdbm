@@ -83,15 +83,15 @@ Route::get('/upload_berkas', [PendaftaranController::class, 'upload_berkas'])->n
 
 
 // HALAMAN VERIFIKATOR
-Route::get('/verifikasi_data_foto', [VerifikasiDataFotoController::class, 'index'])->name('VerifikasiDataFoto');
-Route::get('/verifikasi_data_foto', [VerifikasiDataFotoController::class, 'index'])->name('VerifikasiDataFoto');
-Route::get('/verifikasi_data_foto', [VerifikasiDataFotoController::class, 'index'])->name('VerifikasiDataFoto');
-Route::get('/verifikasi_data_foto', [VerifikasiDataFotoController::class, 'index'])->name('VerifikasiDataFoto');
-Route::get('/verifikasi_data_foto', [VerifikasiDataFotoController::class, 'index'])->name('VerifikasiDataFoto');
-Route::get('/verifikasi_data_foto', [VerifikasiDataFotoController::class, 'index'])->name('VerifikasiDataFoto');
-Route::get('/verifikasi_data_foto', [VerifikasiDataFotoController::class, 'index'])->name('VerifikasiDataFoto');
-Route::get('/verifikasi_data_foto', [VerifikasiDataFotoController::class, 'index'])->name('VerifikasiDataFoto');
-Route::get('/verifikasi_data_foto', [VerifikasiDataFotoController::class, 'index'])->name('VerifikasiDataFoto');
+Route::get('/verifikasi_data_foto_wa', [VerifikasiDataFotoController::class, 'FotoDanWA'])->name('VerifikasiDataFotoDanWA');
+Route::get('/verifikasi_data_akta', [VerifikasiDataFotoController::class, 'Akta'])->name('VerifikasiDataAkta');
+Route::get('/verifikasi_data_nisn', [VerifikasiDataFotoController::class, 'Nisn'])->name('VerifikasiDataNisn');
+Route::get('/verifikasi_data_kk', [VerifikasiDataFotoController::class, 'KK'])->name('VerifikasiDataKK');
+Route::get('/verifikasi_data_keabsahan', [VerifikasiDataFotoController::class, 'Keabsahan'])->name('VerifikasiDataKeabsahan');
+Route::get('/verifikasi_data_kelakuan', [VerifikasiDataFotoController::class, 'Kelakuan'])->name('VerifikasiDataKelakuan');
+Route::get('/verifikasi_data_rekap', [VerifikasiDataFotoController::class, 'Rekap'])->name('VerifikasiDataRekap');
+// Route::get('/verifikasi_data_foto', [VerifikasiDataFotoController::class, 'index'])->name('VerifikasiDataFoto');
+// Route::get('/verifikasi_data_foto', [VerifikasiDataFotoController::class, 'index'])->name('VerifikasiDataFoto');
 
 
 // HALAMAN LOGIN VERIFIKATOR
