@@ -17,6 +17,15 @@ class AuthController extends Controller
         }
     }
 
+    public function loginVerifikator()
+    {
+        if (Auth::check()){
+            return redirect('dashboard');
+        }else{
+            return view('auth.loginVerifikator');
+        }
+    }
+
     public function actionLogin(Request $request)
     {
         $data = [
@@ -29,6 +38,21 @@ class AuthController extends Controller
         }else{
             Session::flash('error', 'NIK atau Password Salah');
             return redirect('/');
+        }
+    }
+
+    public function actionLoginVerifikasi(Request $request)
+    {
+        $data = [
+            'tb_data_user_verifikator_username' => $request->input('username_verifikator'),
+            'tb_data_user_verifikator_password' => $request->input('password_verifikator'),
+        ];
+
+        if (Auth::attempt($data)) {
+            return redirect('dashboard');
+        } else {
+            Session::flash('error', 'Username atau Password Salah');
+            return redirect('/verifikasi');
         }
     }
 
