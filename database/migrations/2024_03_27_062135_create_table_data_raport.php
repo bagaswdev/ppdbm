@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('table_data_raport', function (Blueprint $table) {
             $table->id('tb_data_raport_id');
             $table->bigInteger('data_siswa_id')->nullable()->default(null);
+            $table->bigInteger('tb_data_user_verifikator_id')->nullable()->default(null);
             $table->float('tb_data_raport_mtk5_smt1')->nullable()->default(null);
             $table->float('tb_data_raport_ipa5_smt1')->nullable()->default(null);
             $table->float('tb_data_raport_indo5_smt1')->nullable()->default(null);
@@ -23,7 +24,6 @@ return new class extends Migration
             $table->float('tb_data_raport_mtk6_smt1')->nullable()->default(null);
             $table->float('tb_data_raport_ipa6_smt1')->nullable()->default(null);
             $table->float('tb_data_raport_indo6_smt1')->nullable()->default(null);
-            $table->float('tb_data_raport_rata_rata')->nullable()->default(null);
             $table->string('tb_data_raport_file')->nullable()->default(null);
             $table->string('tb_data_raport_status')->nullable()->default(null);
             $table->timestamps();
