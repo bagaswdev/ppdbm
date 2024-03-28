@@ -16,9 +16,10 @@ class isLogin
      */
     public function handle(Request $request, Closure $next): Response
     {
-        //Jika sudah login lanjutkan
-        if (Auth::check()) {
-            return $next($request);
+        foreach ($guards as $guard) {
+            if (Auth::guard($guard)->check()) {
+                return $next($request);
+            }
         }
 
         //Jika belum login, login dulu

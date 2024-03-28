@@ -13,9 +13,11 @@ return new class extends Migration
     {
         Schema::create('table_data_user_verifikator', function (Blueprint $table) {
             $table->id('tb_data_user_verifikator_id');
-            $table->string('tb_data_user_verifikator_nama')->nullable()->default(null);
-            $table->string('tb_data_user_verifikator_username')->nullable()->default(null);
-            $table->string('tb_data_user_verifikator_password')->nullable()->default(null);
+            $table->string('tb_data_user_verifikator_nama');
+            $table->string('email')->unique();
+            $table->string('tb_data_user_verifikator_password');
+            $table->timestamp('email_verified_at')->nullable();
+            $table->rememberToken();
             $table->timestamps();
         });
     }

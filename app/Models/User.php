@@ -21,14 +21,6 @@ class User extends Authenticatable
 
 
     protected $table = "table_data_user";
-    protected $table2 = "table_data_user_verifikasi";
-
-    protected $fillable2 = [
-        'tb_data_user_verifikator_id',
-        'tb_data_user_verifikator_nama',
-        'tb_data_user_verifikator_username',
-        'tb_data_user_verifikator_password',
-    ];
 
     protected $fillable = [
         'tb_data_user_nik',
