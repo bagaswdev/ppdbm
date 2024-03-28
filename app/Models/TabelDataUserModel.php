@@ -18,7 +18,6 @@ class TabelDataUserModel extends Authenticatable
     protected $table = "table_data_user";
 
     protected $fillable = [
-        'tb_data_user_id',
         'tb_data_user_nik',
         'tb_data_user_nama',
         'email',

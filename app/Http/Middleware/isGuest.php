@@ -14,11 +14,12 @@ class isGuest
      *
      * @param  \Closure(\Illuminate\Http\Request): (\Symfony\Component\HttpFoundation\Response)  $next
      */
-    public function handle(Request $request, Closure $next): Response
+    public function handle(Request $request, Closure $next)
     {
-        //Jika sudah login, tidak boleh akses link tersebut lagi
-        if (Auth::check()) {
-            return redirect()->route('detail')->with('success', 'Kamu sudah dalam keadaan login');
+        foreach ($guards as $guard) {
+            if (Auth::guard($guard)->check()) {
+                return $next($request);
+            }
         }
         return $next($request);
     }

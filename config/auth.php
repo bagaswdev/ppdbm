@@ -41,9 +41,14 @@ return [
             'provider' => 'users',
         ],
 
-        'verifikator' >= [
+        'verifikator' => [
             'driver' => 'session',
             'provider' => 'verifikators',
+        ],
+
+        'userDaftar' => [
+            'driver' => 'session',
+            'provider' => 'userDaftars',
         ],
     ],
 
@@ -65,20 +70,15 @@ return [
     */
 
     'providers' => [
-        'users' => [
+        'userDaftars' => [
             'driver' => 'eloquent',
             'model' => App\Models\TabelDataUserModel::class,
         ],
-
 
         'verifikators' => [
             'driver' => 'eloquent',
             'model' => App\Models\TabelDataUserVerifikatorModel::class,
         ],
-        // 'users' => [
-        //     'driver' => 'database',
-        //     'table' => 'users',
-        // ],
     ],
 
     /*

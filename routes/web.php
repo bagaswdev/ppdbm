@@ -30,7 +30,7 @@ Route::get('/monitoring', [AuthController::class, 'monitoring'])->name('monitori
 Route::get('/reguler', [AuthController::class, 'reguler'])->name('reguler')->middleware('isGuest');
 // Route::get('/dashboard', [AuthController::class, 'dashboard'])->name('dashboard')->middleware('isLogin');
 
-Route::get('/logout', [AuthController::class, 'logout'])->name('logout')->middleware('isLogin');
+Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 
 Route::get('/detail', [DataPendaftarController::class, 'detail'])->name('detail')->middleware('isLogin');
 Route::post('/cari', [DataPendaftarController::class, 'cari'])->middleware('isLogin');
@@ -41,10 +41,10 @@ Route::post('/cariBack', [DataPendaftarController::class, 'cariBack'])->middlewa
 Route::put('/proses_verifikasi', [VerifikasiBerkas::class, 'proses_verifikasi'])->name('proses_verifikasi')->middleware('isLogin');
 
 //Proses authentikasi
-Route::get('/', [AuthController::class, 'login'])->name('login')->middleware('isGuest');
-Route::post('/actionLogin', [AuthController::class, 'actionLogin'])->name('actionLogin')->middleware('isGuest');
-Route::get('/register', [RegisterController::class, 'register'])->name('register')->middleware('isGuest');
-Route::post('/ProsesOtentikasi', [AuthController::class, 'otentikasi'])->name('otentikasi')->middleware('isGuest');
+Route::get('/', [AuthController::class, 'login'])->name('login');
+Route::post('/actionLogin', [AuthController::class, 'actionLogin'])->name('actionLogin');
+Route::get('/register', [RegisterController::class, 'register'])->name('register');
+Route::post('/ProsesOtentikasi', [AuthController::class, 'otentikasi'])->name('otentikasi');
 
 
 // Proses Daftar Akun
@@ -53,11 +53,11 @@ Route::post('/ProsesDaftarAkun', [RegisterController::class, 'ProsesDaftarAkun']
 
 
 // PROSES PEMILIHAN JALUR
-Route::get('/PemilihanJalur', [PemilihanJalurController::class, 'PemilihanJalur'])->name('PemilihanJalur')->middleware('isGuest');
-Route::post('/OpsiPemilihanJalur', [PemilihanJalurController::class, 'OpsiPemilihanJalur'])->name('OpsiPemilihanJalur')->middleware('isGuest');
-Route::post('/CekPemilihanJalurOpsiRegulerJawaban', [PemilihanJalurController::class, 'CekPemilihanJalurOpsiRegulerJawaban'])->name('CekPemilihanJalurOpsiRegulerJawaban')->middleware('isGuest');
-Route::post('/CekPemilihanJalurOpsiAfirmasiJawaban', [PemilihanJalurController::class, 'CekPemilihanJalurOpsiAfirmasiJawaban'])->name('CekPemilihanJalurOpsiAfirmasiJawaban')->middleware('isGuest');
-Route::post('/HasilPemilihanJalurOpsiRegulerJawaban', [PemilihanJalurController::class, 'HasilPemilihanJalurOpsiRegulerJawaban'])->name('HasilPemilihanJalurOpsiRegulerJawaban')->middleware('isGuest');
+Route::get('/PemilihanJalur', [PemilihanJalurController::class, 'PemilihanJalur'])->name('PemilihanJalur');
+Route::post('/OpsiPemilihanJalur', [PemilihanJalurController::class, 'OpsiPemilihanJalur'])->name('OpsiPemilihanJalur');
+Route::post('/CekPemilihanJalurOpsiRegulerJawaban', [PemilihanJalurController::class, 'CekPemilihanJalurOpsiRegulerJawaban'])->name('CekPemilihanJalurOpsiRegulerJawaban');
+Route::post('/CekPemilihanJalurOpsiAfirmasiJawaban', [PemilihanJalurController::class, 'CekPemilihanJalurOpsiAfirmasiJawaban'])->name('CekPemilihanJalurOpsiAfirmasiJawaban');
+Route::post('/HasilPemilihanJalurOpsiRegulerJawaban', [PemilihanJalurController::class, 'HasilPemilihanJalurOpsiRegulerJawaban'])->name('HasilPemilihanJalurOpsiRegulerJawaban');
 
 
 
@@ -94,6 +94,6 @@ Route::get('/verifikasi_data_rekap', [VerifikasiDataFotoController::class, 'Reka
 
 
 // HALAMAN LOGIN VERIFIKATOR
-Route::get('/verifikasi', [AuthController::class, 'loginVerifikator'])->name('loginVerifikator')->middleware('isGuest');
-Route::post('/actionLoginVerifikasi', [AuthController::class, 'actionLoginVerifikasi'])->name('actionLoginVerifikasi')->middleware('isGuest');
-Route::post('/ProsesOtentikasiVerifikasi', [AuthController::class, 'otentikasiVerifikasi'])->name('otentikasiVerifikasi')->middleware('isGuest');
+Route::get('/verifikasi', [AuthController::class, 'loginVerifikator'])->name('loginVerifikator');
+Route::post('/actionLoginVerifikasi', [AuthController::class, 'actionLoginVerifikasi'])->name('actionLoginVerifikasi');
+Route::post('/ProsesOtentikasiVerifikasi', [AuthController::class, 'otentikasiVerifikasi'])->name('otentikasiVerifikasi');
