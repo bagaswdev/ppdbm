@@ -47,8 +47,8 @@ class RegisterController extends Controller
         TabelDataUserModel::create($validasiData);
 
         // id tabel siswa
-        $tb_data_siswa_id = Str::uuid()->toString();
-        $TabelDataSiswa['tb_data_siswa_id'] = $tb_data_siswa_id;
+
+        $TabelDataSiswa['tb_data_siswa_id'] = Str::uuid()->toString();
         $TabelDataSiswa['tb_data_user_id'] = $tb_data_user_id;  //fk dari tabel user
         // simpan di tabel siswa
         TabelDataSiswaModel::create($TabelDataSiswa);
