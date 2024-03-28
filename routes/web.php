@@ -48,7 +48,7 @@ Route::post('/ProsesOtentikasi', [AuthController::class, 'otentikasi'])->name('o
 
 
 // Proses Daftar Akun
-Route::post('/ProsesDaftarAkun', [RegisterController::class, 'ProsesDaftarAkun'])->name('ProsesDaftarAkun')->middleware('isGuest');
+Route::post('/ProsesDaftarAkun', [RegisterController::class, 'ProsesDaftarAkun'])->name('ProsesDaftarAkun');
 
 
 

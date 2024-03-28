@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id('tb_data_user_verifikator_id');
             $table->string('tb_data_user_verifikator_nama');
             $table->string('email')->unique();
-            $table->string('tb_data_user_verifikator_password');
+            $table->string('password');
             $table->timestamp('email_verified_at')->nullable();
             $table->rememberToken();
             $table->timestamps();
