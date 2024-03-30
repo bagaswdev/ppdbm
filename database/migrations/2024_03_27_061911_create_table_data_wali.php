@@ -13,7 +13,6 @@ return new class extends Migration
     {
         Schema::create('table_data_wali', function (Blueprint $table) {
             $table->id('tb_data_wali_id');
-            $table->string('tb_data_user_id')->nullable()->default(null);
             $table->string('tb_data_wali_nama')->nullable()->default(null);
             $table->string('tb_data_wali_pekerjaan', 100)->nullable()->default(null);
             $table->string('tb_data_wali_agama', 20)->nullable()->default(null);
