@@ -98,3 +98,58 @@ Route::get('/verifikasi_data_rekap', [VerifikasiDataFotoController::class, 'Reka
 Route::get('/verifikasi', [AuthController::class, 'loginVerifikator'])->name('loginVerifikator')->middleware('cekLogin');
 Route::post('/actionLoginVerifikasi', [AuthController::class, 'actionLoginVerifikasi'])->name('actionLoginVerifikasi');
 Route::post('/ProsesOtentikasiVerifikasi', [AuthController::class, 'otentikasiVerifikasi'])->name('otentikasiVerifikasi');
+
+
+// MENU VERIFIKASI FOTO WA KIP
+Route::get('/verifikasiMenuFotoWAKIP', [NamaController::class, 'verifikasiMenuFotoWAKIP'])->name('verifikasiMenuFotoWAKIP')->middleware('cekLogin');
+Route::get('/verifikasiMenuFotoWAKIP', [NamaController::class, 'verifikasiMenuFotoWAKIP'])->name('verifikasiMenuFotoWAKIP')->middleware('cekLogin');
+Route::get('/verifikasiMenuFotoWAKIP', [NamaController::class, 'verifikasiMenuFotoWAKIP'])->name('verifikasiMenuFotoWAKIP')->middleware('cekLogin');
+Route::get('/verifikasiMenuFotoWAKIP', [NamaController::class, 'verifikasiMenuFotoWAKIP'])->name('verifikasiMenuFotoWAKIP')->middleware('cekLogin');
+Route::get('/verifikasiMenuFotoWAKIP', [NamaController::class, 'verifikasiMenuFotoWAKIP'])->name('verifikasiMenuFotoWAKIP')->middleware('cekLogin');
+Route::get('/verifikasiMenuFotoWAKIP', [NamaController::class, 'verifikasiMenuFotoWAKIP'])->name('verifikasiMenuFotoWAKIP')->middleware('cekLogin');
+
+// MENU VERIFIKASI AKTA
+Route::get('/verifikasiMenuAkta', [NamaController::class, 'verifikasiMenuAkta'])->name('verifikasiMenuAkta')->middleware('cekLogin');
+Route::get('/verifikasiMenuAkta', [NamaController::class, 'verifikasiMenuAkta'])->name('verifikasiMenuAkta')->middleware('cekLogin');
+Route::get('/verifikasiMenuAkta', [NamaController::class, 'verifikasiMenuAkta'])->name('verifikasiMenuAkta')->middleware('cekLogin');
+Route::get('/verifikasiMenuAkta', [NamaController::class, 'verifikasiMenuAkta'])->name('verifikasiMenuAkta')->middleware('cekLogin');
+Route::get('/verifikasiMenuAkta', [NamaController::class, 'verifikasiMenuAkta'])->name('verifikasiMenuAkta')->middleware('cekLogin');
+Route::get('/verifikasiMenuAkta', [NamaController::class, 'verifikasiMenuAkta'])->name('verifikasiMenuAkta')->middleware('cekLogin');
+
+// MENU VERIFIKASI NISN
+Route::get('/verifikasiMenuNISN', [NamaController::class, 'verifikasiMenuNISN'])->name('verifikasiMenuNISN')->middleware('cekLogin');
+Route::get('/verifikasiMenuNISN', [NamaController::class, 'verifikasiMenuNISN'])->name('verifikasiMenuNISN')->middleware('cekLogin');
+Route::get('/verifikasiMenuNISN', [NamaController::class, 'verifikasiMenuNISN'])->name('verifikasiMenuNISN')->middleware('cekLogin');
+Route::get('/verifikasiMenuNISN', [NamaController::class, 'verifikasiMenuNISN'])->name('verifikasiMenuNISN')->middleware('cekLogin');
+Route::get('/verifikasiMenuNISN', [NamaController::class, 'verifikasiMenuNISN'])->name('verifikasiMenuNISN')->middleware('cekLogin');
+
+// MENU VERIFIKASI KK
+Route::get('/verifikasiMenuKK', [NamaController::class, 'verifikasiMenuKK'])->name('verifikasiMenuKK')->middleware('cekLogin');
+Route::get('/verifikasiMenuKK', [NamaController::class, 'verifikasiMenuKK'])->name('verifikasiMenuKK')->middleware('cekLogin');
+Route::get('/verifikasiMenuKK', [NamaController::class, 'verifikasiMenuKK'])->name('verifikasiMenuKK')->middleware('cekLogin');
+Route::get('/verifikasiMenuKK', [NamaController::class, 'verifikasiMenuKK'])->name('verifikasiMenuKK')->middleware('cekLogin');
+Route::get('/verifikasiMenuKK', [NamaController::class, 'verifikasiMenuKK'])->name('verifikasiMenuKK')->middleware('cekLogin');
+Route::get('/verifikasiMenuKK', [NamaController::class, 'verifikasiMenuKK'])->name('verifikasiMenuKK')->middleware('cekLogin');
+
+// MENU VERIFIKASI KEABSAHAN
+Route::get('/verifikasiMenuKeabsahan', [NamaController::class, 'verifikasiMenuKeabsahan'])->name('verifikasiMenuKeabsahan')->middleware('cekLogin');
+Route::get('/verifikasiMenuKeabsahan', [NamaController::class, 'verifikasiMenuKeabsahan'])->name('verifikasiMenuKeabsahan')->middleware('cekLogin');
+Route::get('/verifikasiMenuKeabsahan', [NamaController::class, 'verifikasiMenuKeabsahan'])->name('verifikasiMenuKeabsahan')->middleware('cekLogin');
+Route::get('/verifikasiMenuKeabsahan', [NamaController::class, 'verifikasiMenuKeabsahan'])->name('verifikasiMenuKeabsahan')->middleware('cekLogin');
+Route::get('/verifikasiMenuKeabsahan', [NamaController::class, 'verifikasiMenuKeabsahan'])->name('verifikasiMenuKeabsahan')->middleware('cekLogin');
+
+// MENU VERIFIKASI KELAKUAN
+Route::get('/verifikasiMenuKelakuan', [NamaController::class, 'verifikasiMenuKelakuan'])->name('verifikasiMenuKelakuan')->middleware('cekLogin');
+Route::get('/verifikasiMenuKelakuan', [NamaController::class, 'verifikasiMenuKelakuan'])->name('verifikasiMenuKelakuan')->middleware('cekLogin');
+Route::get('/verifikasiMenuKelakuan', [NamaController::class, 'verifikasiMenuKelakuan'])->name('verifikasiMenuKelakuan')->middleware('cekLogin');
+Route::get('/verifikasiMenuKelakuan', [NamaController::class, 'verifikasiMenuKelakuan'])->name('verifikasiMenuKelakuan')->middleware('cekLogin');
+Route::get('/verifikasiMenuKelakuan', [NamaController::class, 'verifikasiMenuKelakuan'])->name('verifikasiMenuKelakuan')->middleware('cekLogin');
+Route::get('/verifikasiMenuKelakuan', [NamaController::class, 'verifikasiMenuKelakuan'])->name('verifikasiMenuKelakuan')->middleware('cekLogin');
+
+// MENU VERIFIKASI REKAP
+Route::get('/verifikasiMenuRekap', [NamaController::class, 'verifikasiMenuRekap'])->name('verifikasiMenuRekap')->middleware('cekLogin');
+Route::get('/verifikasiMenuRekap', [NamaController::class, 'verifikasiMenuRekap'])->name('verifikasiMenuRekap')->middleware('cekLogin');
+Route::get('/verifikasiMenuRekap', [NamaController::class, 'verifikasiMenuRekap'])->name('verifikasiMenuRekap')->middleware('cekLogin');
+Route::get('/verifikasiMenuRekap', [NamaController::class, 'verifikasiMenuRekap'])->name('verifikasiMenuRekap')->middleware('cekLogin');
+Route::get('/verifikasiMenuRekap', [NamaController::class, 'verifikasiMenuRekap'])->name('verifikasiMenuRekap')->middleware('cekLogin');
+Route::get('/verifikasiMenuRekap', [NamaController::class, 'verifikasiMenuRekap'])->name('verifikasiMenuRekap')->middleware('cekLogin');
