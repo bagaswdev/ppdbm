@@ -82,7 +82,6 @@
                                     <a href="#" class="noble-ui-logo d-block mb-2">PPDBM<span> MTsN 1 Kota
                                             Malang</span></a>
                                     <h5 class="text-muted fw-normal mb-4">LOGIN AKUN VERIFIKATOR</h5>
-
                                     @if (session('error'))
                                     <div class="alert alert-danger">
                                         <b>Opps!</b> {{ session('error') }}

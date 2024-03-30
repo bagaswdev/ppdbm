@@ -9,6 +9,14 @@ use Illuminate\Support\Facades\Session;
 
 class AuthController extends Controller
 {
+
+    public function home()
+    {
+
+        // return 'home';
+        return view('auth.home');
+    }
+
     public function login()
     {
         return view('auth.login');
@@ -18,29 +26,29 @@ class AuthController extends Controller
     {
         // Validasi
         $validasiData = $request->validate([
-            'nik_peserta_didik' => ['required', 'string'],
+            'tb_data_user_nik' => ['required', 'string'],
             'password'    => ['required', 'string'],
         ], [
-            'nik_peserta_didik.required' => 'NIK harus diisi.',
-            'nik_peserta_didik.string' => 'NIK harus string.',
+            'tb_data_user_nik.required' => 'NIK harus diisi.',
+            'tb_data_user_nik.string' => 'NIK harus string.',
             'password.required' => 'Password harus diisi.',
             'password.string' => 'Password harus string.',
         ]);
 
-        if (Auth::guard('userDaftar')->attempt(['tb_data_user_nik' => $request->nik_peserta_didik, 'password' => $request->password])) {
-            return redirect()->route('dashboard');
-        } else {
-            return redirect()->back()->with('error', 'NIK atau Password salah.');
+        if (Auth::guard('pesertaDidik')->attempt($validasiData)) {
+            $request->session()->regenerate();
+
+            return redirect()->intended('dashboard');
         }
+        return back()->withErrors([
+            'tb_data_user_nik' => 'The provided credentials do not match our records.',
+        ])->onlyInput('tb_data_user_nik');
     }
 
     public function loginVerifikator()
     {
-        // if (Auth::check()) {
-        //     return redirect('dashboard');
-        // } else {
+
         return view('auth.loginVerifikator');
-        // }
     }
 
 
@@ -59,8 +67,9 @@ class AuthController extends Controller
         ]);
 
 
-        if (Auth::guard('verifikator')->attempt(['email' => $request->email, 'password' => $request->password])) {
-            return redirect()->route('dashboard');
+        if (Auth::guard('verifikator')->attempt($validasiData)) {
+            $request->session()->regenerate();
+            return redirect()->route('dashboardVerifikasi');
         } else {
             return redirect()->back()->with('error', 'Email atau Password salah.');
         }
@@ -136,11 +145,9 @@ class AuthController extends Controller
 
     function logout(Request $request)
     {
-        if (Auth::guard('userDaftar')->check()) {
-            Auth::guard('userDaftar')->logout();
-        } elseif (Auth::guard('verifikator')->check()) {
-            Auth::guard('verifikator')->logout();
-        }
+        Auth::logout();
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
 
         return redirect(route('login'))->with('success', 'Berhasil Logout');
     }

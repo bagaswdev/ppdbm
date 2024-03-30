@@ -14,6 +14,7 @@
         <div class="card">
             <div class="card-body">
 
+
                 @auth
                 <p>Welcome, {{ Auth::user()->email }}</p>
                 @endauth
@@ -21,7 +22,7 @@
 
 
 
-                <p>Silakan mengisi setiap form untuk melakukan pendaftaran</p>
+                <p>VERIFIKASIIIII</p>
             </div>
         </div>
     </div>

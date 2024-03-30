@@ -23,12 +23,10 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
-// Route::get('/', [AuthController::class, 'login'])->name('login')->middleware('isGuest');
 Route::get('/DaftarUlang', [AuthController::class, 'DaftarUlang'])->name('DaftarUlang')->middleware('isGuest');
 Route::get('/tes2024', [AuthController::class, 'tes2024'])->name('tes2024')->middleware('isGuest');
 Route::get('/monitoring', [AuthController::class, 'monitoring'])->name('monitoring')->middleware('isGuest');
 Route::get('/reguler', [AuthController::class, 'reguler'])->name('reguler')->middleware('isGuest');
-// Route::get('/dashboard', [AuthController::class, 'dashboard'])->name('dashboard')->middleware('isLogin');
 
 Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 
@@ -41,7 +39,8 @@ Route::post('/cariBack', [DataPendaftarController::class, 'cariBack'])->middlewa
 Route::put('/proses_verifikasi', [VerifikasiBerkas::class, 'proses_verifikasi'])->name('proses_verifikasi')->middleware('isLogin');
 
 //Proses authentikasi
-Route::get('/', [AuthController::class, 'login'])->name('login');
+Route::get('/', [AuthController::class, 'home'])->name('home');
+Route::get('/login', [AuthController::class, 'login'])->name('login')->middleware('cekLogin');
 Route::post('/actionLogin', [AuthController::class, 'actionLogin'])->name('actionLogin');
 Route::get('/register', [RegisterController::class, 'register'])->name('register');
 Route::post('/ProsesOtentikasi', [AuthController::class, 'otentikasi'])->name('otentikasi');
@@ -64,7 +63,8 @@ Route::post('/HasilPemilihanJalurOpsiRegulerJawaban', [PemilihanJalurController:
 
 //Proses Halaman Dashboard
 // Route::get('/dashboard', [DashboardController::class, 'dashboard'])->name('dashboard')->middleware('isLogin');
-Route::get('/dashboard', [DashboardController::class, 'dashboard'])->name('dashboard');
+Route::get('/dashboard', [DashboardController::class, 'dashboard'])->name('dashboard')->middleware('auth:pesertaDidik');
+Route::get('/dashboardVerifikasi', [DashboardController::class, 'dashboardVerifikasi'])->name('dashboardVerifikasi')->middleware('auth:verifikator');
 Route::get('/form_data_siswa', [PendaftaranController::class, 'form_data_siswa'])->name('form_data_siswa');
 Route::get('/form_data_ayah_kandung', [PendaftaranController::class, 'form_data_ayah_kandung'])->name('form_data_ayah_kandung');
 Route::get('/form_data_ibu_kandung', [PendaftaranController::class, 'form_data_ibu_kandung'])->name('form_data_ibu_kandung');
@@ -94,6 +94,7 @@ Route::get('/verifikasi_data_rekap', [VerifikasiDataFotoController::class, 'Reka
 
 
 // HALAMAN LOGIN VERIFIKATOR
-Route::get('/verifikasi', [AuthController::class, 'loginVerifikator'])->name('loginVerifikator');
+
+Route::get('/verifikasi', [AuthController::class, 'loginVerifikator'])->name('loginVerifikator')->middleware('cekLogin');
 Route::post('/actionLoginVerifikasi', [AuthController::class, 'actionLoginVerifikasi'])->name('actionLoginVerifikasi');
 Route::post('/ProsesOtentikasiVerifikasi', [AuthController::class, 'otentikasiVerifikasi'])->name('otentikasiVerifikasi');
