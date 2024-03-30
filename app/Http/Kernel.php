@@ -34,13 +34,15 @@ class Kernel extends HttpKernel
             \Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse::class,
             \Illuminate\Session\Middleware\StartSession::class,
             \Illuminate\View\Middleware\ShareErrorsFromSession::class,
+            \Illuminate\Session\Middleware\AuthenticateSession::class, // Tambahkan middleware ini di sini
             \App\Http\Middleware\VerifyCsrfToken::class,
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
         ],
 
+
         'api' => [
             // \Laravel\Sanctum\Http\Middleware\EnsureFrontendRequestsAreStateful::class,
-            \Illuminate\Routing\Middleware\ThrottleRequests::class.':api',
+            \Illuminate\Routing\Middleware\ThrottleRequests::class . ':api',
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
         ],
     ];
@@ -66,5 +68,9 @@ class Kernel extends HttpKernel
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
         'isLogin'   =>  \App\Http\Middleware\isLogin::class,
         'isGuest'   =>  \App\Http\Middleware\isGuest::class,
+        'isVerifikator'   =>  \App\Http\Middleware\isVerifikator::class,
+        'isPesertaDidik'   =>  \App\Http\Middleware\isPesertaDidik::class,
+        'cekLogin'   =>  \App\Http\Middleware\cekLogin::class,
+
     ];
 }

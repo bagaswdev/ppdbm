@@ -110,7 +110,7 @@
                                         <div class="mb-3">
                                             <label for="nik_peserta_didik" class="form-label">NIK Peserta Didik</label>
                                             <input type="text" class="form-control" id="nik_peserta_didik"
-                                                name="nik_peserta_didik" autocomplete="NIK Calon Siswa"
+                                                name="tb_data_user_nik" autocomplete="NIK Calon Siswa"
                                                 placeholder="3508672898998881">
                                         </div>
                                         <div class="mb-3">

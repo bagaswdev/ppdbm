@@ -12,7 +12,7 @@
         </form> --}}
         <ul class="navbar-nav">
             <li class="nav-item dropdown">
-                <p class="">Anda Login Sebagai: {{ Auth::user()->username }}</p>
+                <p class="">Anda Login Sebagai: {{ Auth::user()->tb_data_user_nama }}</p>
             </li>
         </ul>
         <ul class="navbar-nav">

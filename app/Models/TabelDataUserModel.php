@@ -16,6 +16,7 @@ class TabelDataUserModel extends Authenticatable
     use HasApiTokens, HasFactory, Notifiable;
 
     protected $table = "table_data_user";
+    protected $primaryKey = 'tb_data_user_id';
 
     protected $fillable = [
         'tb_data_user_id',

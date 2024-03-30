@@ -4,10 +4,10 @@ namespace App\Http\Middleware;
 
 use Closure;
 use Illuminate\Http\Request;
-use Symfony\Component\HttpFoundation\Response;
 use Illuminate\Support\Facades\Auth;
+use Symfony\Component\HttpFoundation\Response;
 
-class isLogin
+class cekLogin
 {
     /**
      * Handle an incoming request.
@@ -16,12 +16,11 @@ class isLogin
      */
     public function handle(Request $request, Closure $next): Response
     {
-        //Jika sudah login lanjutkan
-        if (Auth::check()) {
-            return $next($request);
+
+        if (Auth::guard('verifikator')->check() || Auth::guard('pesertaDidik')->check()) {
+            return redirect()->back();
         }
 
-        //Jika belum login, login dulu
-        return redirect()->route('login')->withErrors('Silakan login terlebih dahulu! yo');
+        return $next($request);
     }
 }
