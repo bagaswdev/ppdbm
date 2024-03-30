@@ -1,7 +1,7 @@
-@extends('layout.master')
+@extends('layout.masterVerifikasi')
 
-@section('header1')
-@include('layout.header1')
+@section('headerVerifikasi')
+@include('layout.headerVerifikasi')
 @endsection
 
 @push('plugin-styles')
