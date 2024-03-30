@@ -116,53 +116,6 @@
             </li> --}}
 
 
-            {{-- HALAMAN VERIFIKASI --}}
-            <li class="nav-item nav-category">Verifikator</li>
-            <li class="nav-item ">
-                <a href="{{ route('VerifikasiDataFotoDanWA') }}" class="nav-link">
-                    <i class="link-icon" data-feather="box"></i>
-                    <span class="link-title">Verifikasi Data Foto & WA</span>
-                </a>
-            </li>
-            <li class="nav-item ">
-                <a href="{{ route('VerifikasiDataAkta') }}" class="nav-link">
-                    <i class="link-icon" data-feather="box"></i>
-                    <span class="link-title">Verifikasi Data Akta</span>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a href="{{ route('VerifikasiDataNisn') }}" class="nav-link">
-                    <i class="link-icon" data-feather="box"></i>
-                    <span class="link-title">Verifikasi Data NISN</span>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a href="{{ route('VerifikasiDataKK') }}" class="nav-link">
-                    <i class="link-icon" data-feather="box"></i>
-                    <span class="link-title">Verifikasi Data KK</span>
-                </a>
-            </li>
-
-            <li class="nav-item">
-                <a href="{{ route('VerifikasiDataKeabsahan') }}" class="nav-link">
-                    <i class="link-icon" data-feather="box"></i>
-                    <span class="link-title">Verifikasi Data Keabsahan</span>
-                </a>
-            </li>
-
-            <li class="nav-item">
-                <a href="{{ route('VerifikasiDataKelakuan') }}" class="nav-link">
-                    <i class="link-icon" data-feather="box"></i>
-                    <span class="link-title">Verifikasi Data Kelakuan</span>
-                </a>
-            </li>
-
-            <li class="nav-item">
-                <a href="{{ route('VerifikasiDataRekap') }}" class="nav-link">
-                    <i class="link-icon" data-feather="box"></i>
-                    <span class="link-title">Verifikasi Data Rekap</span>
-                </a>
-            </li>
 
         </ul>
     </div>
