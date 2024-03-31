@@ -10,6 +10,7 @@ class TabelDataRaportModel extends Model
     use HasFactory;
 
     protected $table = "table_data_raport";
+    protected $primaryKey = 'tb_data_raport_id';
 
     protected $fillable = [
         'tb_data_raport_id',
@@ -26,5 +27,17 @@ class TabelDataRaportModel extends Model
         'tb_data_raport_rata_rata',
         'tb_data_raport_file',
         'tb_data_raport_status',
+        'tb_data_raport_alasan',
+        'tb_data_user_verifikator_id',
     ];
+
+    public function fk_dari_table_data_siswa()
+    {
+        return $this->belongsTo(TabelDataSiswaModel::class, 'tb_data_siswa_id');
+    }
+
+    public function fk_dari_table_data_user_verifikator()
+    {
+        return $this->belongsTo(TabelDataUserVerifikatorModel::class, 'tb_data_user_verifikator_id');
+    }
 }
