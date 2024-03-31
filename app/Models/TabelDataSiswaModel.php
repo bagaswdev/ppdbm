@@ -5,6 +5,7 @@ namespace App\Models;
 use App\Models\TabelDataKipModel;
 use App\Models\TabelDataFotoModel;
 use App\Models\TabelDataGrupWaModel;
+use App\Models\TabelDataAktaModel;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
@@ -36,6 +37,21 @@ class TabelDataSiswaModel extends Model
         return $this->hasOne(TabelDataGrupWaModel::class, 'tb_data_siswa_id');
     }
 
+    public function relasi_ke_table_data_akta()
+    {
+        return $this->hasOne(TabelDataAktaModel::class, 'tb_data_siswa_id');
+    }
+
+    public function relasi_ke_table_ayah_verif()
+    {
+        return $this->hasOne(TabelDataAyahVerif::class, 'tb_data_siswa_id');
+    }
+
+    public function relasi_ke_table_ibu_verif()
+    {
+        return $this->hasOne(TabelDataIbuVerif::class, 'tb_data_siswa_id');
+    }
+
     // Relasi ke table_data_foto
     public function foto()
     {
@@ -46,5 +62,30 @@ class TabelDataSiswaModel extends Model
     public function kip()
     {
         return $this->hasOne(TabelDataKipModel::class, 'tb_data_siswa_id');
+    }
+
+    public function relasi_ke_table_nisn()
+    {
+        return $this->hasOne(TabelDataNisnModel::class, 'tb_data_siswa_id');
+    }
+
+    public function relasi_ke_table_keabsahan()
+    {
+        return $this->hasOne(TabelDataKeabsahanModel::class, 'tb_data_siswa_id');
+    }
+
+    public function relasi_ke_table_kelakuan()
+    {
+        return $this->hasOne(TabelDataKelakuanBaikModel::class, 'tb_data_siswa_id');
+    }
+
+    public function relasi_ke_table_kk()
+    {
+        return $this->hasOne(TabelDataKkSiswaModel::class, 'tb_data_siswa_id');
+    }
+
+    public function relasi_ke_table_rekap()
+    {
+        return $this->hasOne(TabelDataRaportModel::class, 'tb_data_siswa_id');
     }
 }

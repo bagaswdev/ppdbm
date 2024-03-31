@@ -15,31 +15,37 @@ class VerifikasiDataFotoController extends Controller
 
     public function Akta()
     {
-        return view('verifikator.VerifikasiDataAkta');
+        $data = TabelDataSiswaModel::first();
+        return view('verifikator.VerifikasiDataAkta', compact('data'));
     }
 
     public function Nisn()
     {
-        return view('verifikator.VerifikasiDataNisn');
+        $data = TabelDataSiswaModel::first();
+        return view('verifikator.VerifikasiDataNisn', compact('data'));
     }
 
     public function KK()
     {
-        return view('verifikator.VerifikasiDataKK');
+        $data = TabelDataSiswaModel::first();
+        return view('verifikator.VerifikasiDataKK', compact('data'));
     }
 
     public function Keabsahan()
     {
-        return view('verifikator.VerifikasiDataKeabsahan');
+        $data = TabelDataSiswaModel::first();
+        return view('verifikator.VerifikasiDataKeabsahan', compact('data'));
     }
 
     public function Kelakuan()
     {
-        return view('verifikator.VerifikasiDataKelakuan');
+        $data = TabelDataSiswaModel::first();
+        return view('verifikator.VerifikasiDataKelakuan', compact('data'));
     }
 
     public function Rekap()
     {
-        return view('verifikator.VerifikasiDataRekap');
+        $data = TabelDataSiswaModel::first();
+        return view('verifikator.VerifikasiDataRekap', compact('data'));
     }
 }

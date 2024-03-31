@@ -11,6 +11,12 @@ use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\VerifikasiBerkas;
 use App\Http\Controllers\VerifikasiDataFotoController;
 use App\Http\Controllers\VerifikasiFotoWAKIPController;
+use App\Http\Controllers\VerifikasiAktaController;
+use App\Http\Controllers\VerifikasiKeabsahanController;
+use App\Http\Controllers\VerifikasiKelakuanController;
+use App\Http\Controllers\VerifikasiKKController;
+use App\Http\Controllers\VerifikasiNISNController;
+use App\Http\Controllers\VerifikasiRekapController;
 use Illuminate\Support\Facades\Auth;
 
 /*
@@ -100,57 +106,56 @@ Route::get('/verifikasi', [AuthController::class, 'loginVerifikator'])->name('lo
 Route::post('/actionLoginVerifikasi', [AuthController::class, 'actionLoginVerifikasi'])->name('actionLoginVerifikasi');
 Route::post('/ProsesOtentikasiVerifikasi', [AuthController::class, 'otentikasiVerifikasi'])->name('otentikasiVerifikasi');
 
-
 // MENU VERIFIKASI FOTO WA KIP
 Route::post('/cariDataSiswaSesuaiId', [VerifikasiFotoWAKIPController::class, 'cariDataSiswaSesuaiId'])->name('cariDataSiswaSesuaiId')->middleware('auth:verifikator');
 Route::post('/next', [VerifikasiFotoWAKIPController::class, 'next'])->name('next')->middleware('auth:verifikator');
 Route::post('/back', [VerifikasiFotoWAKIPController::class, 'back'])->name('back')->middleware('auth:verifikator');
 Route::post('/simpanDataVerifikasiFotoWAKIP', [VerifikasiFotoWAKIPController::class, 'simpanDataVerifikasiFotoWAKIP'])->name('simpanDataVerifikasiFotoWAKIP')->middleware('auth:verifikator');
-Route::get('/verifikasiMenuFotoWAKIP', [VerifikasiFotoWAKIPController::class, 'verifikasiMenuFotoWAKIP'])->name('verifikasiMenuFotoWAKIP')->middleware('auth:verifikator');
-Route::get('/verifikasiMenuFotoWAKIP', [VerifikasiFotoWAKIPController::class, 'verifikasiMenuFotoWAKIP'])->name('verifikasiMenuFotoWAKIP')->middleware('auth:verifikator');
+// Route::get('/verifikasiMenuFotoWAKIP', [VerifikasiFotoWAKIPController::class, 'verifikasiMenuFotoWAKIP'])->name('verifikasiMenuFotoWAKIP')->middleware('auth:verifikator');
+// Route::get('/verifikasiMenuFotoWAKIP', [VerifikasiFotoWAKIPController::class, 'verifikasiMenuFotoWAKIP'])->name('verifikasiMenuFotoWAKIP')->middleware('auth:verifikator');
 
 // MENU VERIFIKASI AKTA
-Route::get('/verifikasiMenuAkta', [NamaController::class, 'verifikasiMenuAkta'])->name('verifikasiMenuAkta')->middleware('auth:verifikator');
-Route::get('/verifikasiMenuAkta', [NamaController::class, 'verifikasiMenuAkta'])->name('verifikasiMenuAkta')->middleware('auth:verifikator');
-Route::get('/verifikasiMenuAkta', [NamaController::class, 'verifikasiMenuAkta'])->name('verifikasiMenuAkta')->middleware('auth:verifikator');
-Route::get('/verifikasiMenuAkta', [NamaController::class, 'verifikasiMenuAkta'])->name('verifikasiMenuAkta')->middleware('auth:verifikator');
-Route::get('/verifikasiMenuAkta', [NamaController::class, 'verifikasiMenuAkta'])->name('verifikasiMenuAkta')->middleware('auth:verifikator');
-Route::get('/verifikasiMenuAkta', [NamaController::class, 'verifikasiMenuAkta'])->name('verifikasiMenuAkta')->middleware('auth:verifikator');
+Route::post('/AktacariDataSiswaSesuaiId', [VerifikasiAktaController::class, 'AktacariDataSiswaSesuaiId'])->name('AktacariDataSiswaSesuaiId')->middleware('auth:verifikator');
+Route::post('/AktaNext', [VerifikasiAktaController::class, 'AktaNext'])->name('AktaNext')->middleware('auth:verifikator');
+Route::post('/AktaBack', [VerifikasiAktaController::class, 'AktaBack'])->name('AktaBack')->middleware('auth:verifikator');
+Route::post('/simpanDataVerifikasiAkta', [VerifikasiAktaController::class, 'simpanDataVerifikasiAkta'])->name('simpanDataVerifikasiAkta')->middleware('auth:verifikator');
+// Route::get('/verifikasiMenuAkta', [VerifikasiAktaController::class, 'verifikasiMenuAkta'])->name('verifikasiMenuAkta')->middleware('auth:verifikator');
+// Route::get('/verifikasiMenuAkta', [VerifikasiAktaController::class, 'verifikasiMenuAkta'])->name('verifikasiMenuAkta')->middleware('auth:verifikator');
 
 // MENU VERIFIKASI NISN
-Route::get('/verifikasiMenuNISN', [NamaController::class, 'verifikasiMenuNISN'])->name('verifikasiMenuNISN')->middleware('auth:verifikator');
-Route::get('/verifikasiMenuNISN', [NamaController::class, 'verifikasiMenuNISN'])->name('verifikasiMenuNISN')->middleware('auth:verifikator');
-Route::get('/verifikasiMenuNISN', [NamaController::class, 'verifikasiMenuNISN'])->name('verifikasiMenuNISN')->middleware('auth:verifikator');
-Route::get('/verifikasiMenuNISN', [NamaController::class, 'verifikasiMenuNISN'])->name('verifikasiMenuNISN')->middleware('auth:verifikator');
-Route::get('/verifikasiMenuNISN', [NamaController::class, 'verifikasiMenuNISN'])->name('verifikasiMenuNISN')->middleware('auth:verifikator');
+Route::post('/NISNCariDataSiswaSesuaiId', [VerifikasiNISNController::class, 'NISNCariDataSiswaSesuaiId'])->name('NISNCariDataSiswaSesuaiId')->middleware('auth:verifikator');
+Route::post('/NISNNext', [VerifikasiNISNController::class, 'NISNNext'])->name('NISNNext')->middleware('auth:verifikator');
+Route::post('/NISNBack', [VerifikasiNISNController::class, 'NISNBack'])->name('NISNBack')->middleware('auth:verifikator');
+Route::post('/simpanDataVerifikasiNISN', [VerifikasiNISNController::class, 'simpanDataVerifikasiNISN'])->name('simpanDataVerifikasiNISN')->middleware('auth:verifikator');
+// Route::post('/verifikasiMenuNISN', [VerifikasiNISNController::class, 'verifikasiMenuNISN'])->name('verifikasiMenuNISN')->middleware('auth:verifikator');
 
 // MENU VERIFIKASI KK
-Route::get('/verifikasiMenuKK', [NamaController::class, 'verifikasiMenuKK'])->name('verifikasiMenuKK')->middleware('auth:verifikator');
-Route::get('/verifikasiMenuKK', [NamaController::class, 'verifikasiMenuKK'])->name('verifikasiMenuKK')->middleware('auth:verifikator');
-Route::get('/verifikasiMenuKK', [NamaController::class, 'verifikasiMenuKK'])->name('verifikasiMenuKK')->middleware('auth:verifikator');
-Route::get('/verifikasiMenuKK', [NamaController::class, 'verifikasiMenuKK'])->name('verifikasiMenuKK')->middleware('auth:verifikator');
-Route::get('/verifikasiMenuKK', [NamaController::class, 'verifikasiMenuKK'])->name('verifikasiMenuKK')->middleware('auth:verifikator');
-Route::get('/verifikasiMenuKK', [NamaController::class, 'verifikasiMenuKK'])->name('verifikasiMenuKK')->middleware('auth:verifikator');
+Route::post('/KKCariDataSiswaSesuaiId', [VerifikasiKKController::class, 'KKCariDataSiswaSesuaiId'])->name('KKCariDataSiswaSesuaiId')->middleware('auth:verifikator');
+Route::post('/KKNext', [VerifikasiKKController::class, 'KKNext'])->name('KKNext')->middleware('auth:verifikator');
+Route::post('/KKBack', [VerifikasiKKController::class, 'KKBack'])->name('KKBack')->middleware('auth:verifikator');
+Route::post('/simpanDataVerifikasiKK', [VerifikasiKKController::class, 'simpanDataVerifikasiKK'])->name('simpanDataVerifikasiKK')->middleware('auth:verifikator');
+//Route::get('/verifikasiMenuKK', [NamaController::class, 'verifikasiMenuKK'])->name('verifikasiMenuKK')->middleware('auth:verifikator');
+//Route::get('/verifikasiMenuKK', [NamaController::class, 'verifikasiMenuKK'])->name('verifikasiMenuKK')->middleware('auth:verifikator');
 
 // MENU VERIFIKASI KEABSAHAN
-Route::get('/verifikasiMenuKeabsahan', [NamaController::class, 'verifikasiMenuKeabsahan'])->name('verifikasiMenuKeabsahan')->middleware('auth:verifikator');
-Route::get('/verifikasiMenuKeabsahan', [NamaController::class, 'verifikasiMenuKeabsahan'])->name('verifikasiMenuKeabsahan')->middleware('auth:verifikator');
-Route::get('/verifikasiMenuKeabsahan', [NamaController::class, 'verifikasiMenuKeabsahan'])->name('verifikasiMenuKeabsahan')->middleware('auth:verifikator');
-Route::get('/verifikasiMenuKeabsahan', [NamaController::class, 'verifikasiMenuKeabsahan'])->name('verifikasiMenuKeabsahan')->middleware('auth:verifikator');
-Route::get('/verifikasiMenuKeabsahan', [NamaController::class, 'verifikasiMenuKeabsahan'])->name('verifikasiMenuKeabsahan')->middleware('auth:verifikator');
+Route::post('/KeabsahanCariDataSiswaSesuaiId', [VerifikasiKeabsahanController::class, 'KeabsahanCariDataSiswaSesuaiId'])->name('KeabsahanCariDataSiswaSesuaiId')->middleware('auth:verifikator');
+Route::post('/KeabsahanNext', [VerifikasiKeabsahanController::class, 'KeabsahanNext'])->name('KeabsahanNext')->middleware('auth:verifikator');
+Route::post('/KeabsahanBack', [VerifikasiKeabsahanController::class, 'KeabsahanBack'])->name('KeabsahanBack')->middleware('auth:verifikator');
+Route::post('/simpanDataVerifikasiKeabsahan', [VerifikasiKeabsahanController::class, 'simpanDataVerifikasiKeabsahan'])->name('simpanDataVerifikasiKeabsahan')->middleware('auth:verifikator');
+// Route::get('/verifikasiMenuKeabsahan', [NamaController::class, 'verifikasiMenuKeabsahan'])->name('verifikasiMenuKeabsahan')->middleware('auth:verifikator');
 
 // MENU VERIFIKASI KELAKUAN
-Route::get('/verifikasiMenuKelakuan', [NamaController::class, 'verifikasiMenuKelakuan'])->name('verifikasiMenuKelakuan')->middleware('auth:verifikator');
-Route::get('/verifikasiMenuKelakuan', [NamaController::class, 'verifikasiMenuKelakuan'])->name('verifikasiMenuKelakuan')->middleware('auth:verifikator');
-Route::get('/verifikasiMenuKelakuan', [NamaController::class, 'verifikasiMenuKelakuan'])->name('verifikasiMenuKelakuan')->middleware('auth:verifikator');
-Route::get('/verifikasiMenuKelakuan', [NamaController::class, 'verifikasiMenuKelakuan'])->name('verifikasiMenuKelakuan')->middleware('auth:verifikator');
-Route::get('/verifikasiMenuKelakuan', [NamaController::class, 'verifikasiMenuKelakuan'])->name('verifikasiMenuKelakuan')->middleware('auth:verifikator');
-Route::get('/verifikasiMenuKelakuan', [NamaController::class, 'verifikasiMenuKelakuan'])->name('verifikasiMenuKelakuan')->middleware('auth:verifikator');
+Route::post('/KelakuanCariDataSiswaSesuaiId', [VerifikasiKelakuanController::class, 'KelakuanCariDataSiswaSesuaiId'])->name('KelakuanCariDataSiswaSesuaiId')->middleware('auth:verifikator');
+Route::post('/KelakuanNext', [VerifikasiKelakuanController::class, 'KelakuanNext'])->name('KelakuanNext')->middleware('auth:verifikator');
+Route::post('/KelakuanBack', [VerifikasiKelakuanController::class, 'KelakuanBack'])->name('KelakuanBack')->middleware('auth:verifikator');
+Route::post('/simpanDataVerifikasiKelakuan', [VerifikasiKelakuanController::class, 'simpanDataVerifikasiKelakuan'])->name('simpanDataVerifikasiKelakuan')->middleware('auth:verifikator');
+// Route::post('/verifikasiMenuKelakuan', [NamaController::class, 'verifikasiMenuKelakuan'])->name('verifikasiMenuKelakuan')->middleware('auth:verifikator');
+// Route::get('/verifikasiMenuKelakuan', [NamaController::class, 'verifikasiMenuKelakuan'])->name('verifikasiMenuKelakuan')->middleware('auth:verifikator');
 
 // MENU VERIFIKASI REKAP
-Route::get('/verifikasiMenuRekap', [NamaController::class, 'verifikasiMenuRekap'])->name('verifikasiMenuRekap')->middleware('auth:verifikator');
-Route::get('/verifikasiMenuRekap', [NamaController::class, 'verifikasiMenuRekap'])->name('verifikasiMenuRekap')->middleware('auth:verifikator');
-Route::get('/verifikasiMenuRekap', [NamaController::class, 'verifikasiMenuRekap'])->name('verifikasiMenuRekap')->middleware('auth:verifikator');
-Route::get('/verifikasiMenuRekap', [NamaController::class, 'verifikasiMenuRekap'])->name('verifikasiMenuRekap')->middleware('auth:verifikator');
-Route::get('/verifikasiMenuRekap', [NamaController::class, 'verifikasiMenuRekap'])->name('verifikasiMenuRekap')->middleware('auth:verifikator');
-Route::get('/verifikasiMenuRekap', [NamaController::class, 'verifikasiMenuRekap'])->name('verifikasiMenuRekap')->middleware('auth:verifikator');
+Route::post('/RekapCariDataSiswaSesuaiId', [VerifikasiRekapController::class, 'RekapCariDataSiswaSesuaiId'])->name('RekapCariDataSiswaSesuaiId')->middleware('auth:verifikator');
+Route::post('/RekapNext', [VerifikasiRekapController::class, 'RekapNext'])->name('RekapNext')->middleware('auth:verifikator');
+Route::post('/RekapBack', [VerifikasiRekapController::class, 'RekapBack'])->name('RekapBack')->middleware('auth:verifikator');
+Route::post('/simpanDataVerifikasiRekap', [VerifikasiRekapController::class, 'simpanDataVerifikasiRekap'])->name('simpanDataVerifikasiRekap')->middleware('auth:verifikator');
+//Route::get('/verifikasiMenuRekap', [NamaController::class, 'verifikasiMenuRekap'])->name('verifikasiMenuRekap')->middleware('auth:verifikator');
+//Route::get('/verifikasiMenuRekap', [NamaController::class, 'verifikasiMenuRekap'])->name('verifikasiMenuRekap')->middleware('auth:verifikator');
