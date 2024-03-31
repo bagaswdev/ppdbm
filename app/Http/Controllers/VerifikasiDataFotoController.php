@@ -2,13 +2,15 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\TabelDataSiswaModel;
 use Illuminate\Http\Request;
 
 class VerifikasiDataFotoController extends Controller
 {
     public function FotoDanWA()
     {
-        return view('verifikator.VerifikasiDataFotoDanWA');
+        $data = TabelDataSiswaModel::first();
+        return view('verifikator.VerifikasiDataFotoDanWA', compact('data'));
     }
 
     public function Akta()

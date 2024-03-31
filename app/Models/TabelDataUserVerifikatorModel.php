@@ -36,4 +36,19 @@ class TabelDataUserVerifikatorModel extends Model
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+    public function relasi_ke_table_data_foto()
+    {
+        return $this->hasOne(TabelDataFotoModel::class, 'tb_data_user_verifikator_id');
+    }
+
+    public function relasi_ke_table_data_grup_wa()
+    {
+        return $this->hasOne(TabelDataGrupWaModel::class, 'tb_data_user_verifikator_id');
+    }
+
+    public function relasi_ke_table_data_kip()
+    {
+        return $this->hasOne(TabelDataKipModel::class, 'tb_data_user_verifikator_id');
+    }
 }
